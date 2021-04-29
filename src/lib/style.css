@@ -1,15 +1,15 @@
-#editorMD, #editorMD:after, #editorMD:before{
+.editorMD__container, .editorMD__container:after, .editorMD__container:before{
   box-sizing: border-box;
 }
 
-#editorMD.container {
+.editorMD__container {
   background: #fff;
   padding: 8px;
   min-height: 250px;
   position: relative;
 }
 
-#editorMD .loading{
+.editorMD__loading{
   position: absolute;
   z-index: 10;
   width: 100%;
@@ -22,17 +22,17 @@
   align-items: center;
 }
 
-#editorMD .loading img {
+.editorMD__loading img {
   width: 85px;
 }
 
-#editorMD .tab{
+.editorMD__tab{
   border: 1px solid #DEE4F9;
   border-radius: 4px;
   margin-bottom: 8px;
 }
 
-#editorMD .tab > button {
+.editorMD__tab > button {
   background: transparent;
   border-top: 0;
   border-left: 0;
@@ -44,7 +44,7 @@
   position: relative;
 }
 
-#editorMD .container textarea {
+.editorMD__container textarea {
   border: 0;
   display: block;
   width: 100%;
@@ -57,7 +57,7 @@
   background: transparent;
 }
 
-#editorMD .invisibleInput{
+.editorMD__invisibleInput{
   opacity: 0;
   width: 100%;
   height: 100%;
@@ -67,40 +67,40 @@
   z-index: 1000;
 }
 
-#editorMD .strong {
+.editorMD__strong {
   font-weight: bold;
 }
 
-#editorMD .em {
+.editorMD__em {
   font-style: italic;
 }
 
-#editorMD .h1 {
+.editorMD__h1 {
   font-weight: bold;
   font-size: 2em;
 }
 
-#editorMD .h2{
+.editorMD__h2{
   font-weight: bold;
   font-size: 1.5em;
 }
 
-#editorMD .h3{
+.editorMD__h3{
   font-weight: bold;
   font-size: 1.25em;
 }
 
-#editorMD .a{
+.editorMD__a{
   color: #425BB7;
 }
 
-#editorMD .imageContainer{
+.editorMD__imageContainer{
   position: relative;
   display: inline-block;
   cursor: pointer;
 }
 
-#editorMD .imageContainer:after{
+.editorMD__imageContainer:after{
   content: "";
   position: absolute;
   width: 100%;
@@ -113,7 +113,7 @@
   transition: opacity .4s;
 }
 
-#editorMD .trash{
+.editorMD__trash{
   position: absolute;
   top: 50%;
   left: 50%;
@@ -124,11 +124,11 @@
   transition: opacity .4s;
 }
 
-#editorMD .imageContainer:hover:after, .imageContainer:hover .trash{
+.editorMD__imageContainer:hover:after, .editorMD__imageContainer:hover .editorMD__trash{
   opacity: 1;
 }
 
-#editorMD .hidedInput{
+.editorMD__hidedInput{
   position: absolute;
   z-index: 20;
   top: 100%;
@@ -142,7 +142,7 @@
   padding: 6px;
 }
 
-#editorMD .hidedInput input {
+.editorMD__hidedInput input {
   width: calc(100% - 60px);
   background: #fff;
   border: 1px solid #E9E9E9;
@@ -152,11 +152,11 @@
   color: #425BB7;
 }
 
-#editorMD .hidedInput > div {
+.editorMD__hidedInput > div {
   width: 50px;
 }
 
-#editorMD .placeholder{
+.editorMD__placeholder{
   position: absolute;
   font-size: 14px;
   color: #C4C4C4;
@@ -164,7 +164,7 @@
   padding: 1px 2px;
 }
 
-#editorMd .button {
+.editorMD__button {
   color: #fff;
   padding: 10px;
   background: #425BB7;

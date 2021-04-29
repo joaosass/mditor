@@ -1,5 +1,4 @@
 import {useState, useEffect, forwardRef, useRef} from 'react';
-import style from './style.css';
 
 const Editor = forwardRef(({defaultData, placeholderText, uploadImage}, ref) => {
   const [data, setData] = useState(Array.from({length: 8}).map(() => {
@@ -112,7 +111,7 @@ const Editor = forwardRef(({defaultData, placeholderText, uploadImage}, ref) => 
 
   const handleTags = (tag, content, index) => {
     if (tag !== "img"){
-      return <textarea key={index} className={style[tag]} value={content} onChange={(evt) => handleChangeContent(evt, index)} onKeyPress={handleKeyPress} onKeyDown={(evt) => handleDeleteLine(evt, index)} onFocus={() => {
+      return <textarea key={index} className={'editorMD__' + tag} value={content} onChange={(evt) => handleChangeContent(evt, index)} onKeyPress={handleKeyPress} onKeyDown={(evt) => handleDeleteLine(evt, index)} onFocus={() => {
         setCurrentIndex(index);
       }} ref={(inputRef) => {
         if (inputRef) {
@@ -121,8 +120,8 @@ const Editor = forwardRef(({defaultData, placeholderText, uploadImage}, ref) => 
         return inputsRef.current[index] = inputRef;
       }} />
     } else {
-      return <div key={index} className={style.imageContainer} onClick={() => handleDeleteImage(index)}>
-        <img className={style.trash} src="/trash.svg" />
+      return <div key={index} className="editorMD__imageContainer" onClick={() => handleDeleteImage(index)}>
+        <img className="editorMD__trash" src="/trash.svg" />
         <img src={content} />
       </div>
     }
@@ -265,11 +264,11 @@ const Editor = forwardRef(({defaultData, placeholderText, uploadImage}, ref) => 
     setShowInputLink(false);
   }
 
-  return <div className={style.container} id="editorMD">
-    {loading && <div className={style.loading}>
+  return <div className="editorMD__container" >
+    {loading && <div className="editorMD__loading">
       <img src="/loading.gif" />
     </div>}
-    <div className={style.tab}>
+    <div className="editorMD__tab">
       <button onClick={handleH1}>
         <img src="/H1.svg" />
       </button>
@@ -287,19 +286,19 @@ const Editor = forwardRef(({defaultData, placeholderText, uploadImage}, ref) => 
       </button>
       <button>
         <img src="/image.svg" />
-        <input className={style.invisibleInput} type="file" onChange={handleImage} onClick={cleanInput} />
+        <input className="editorMD__invisibleInput" type="file" onChange={handleImage} onClick={cleanInput} />
       </button>
       <button onClick={handleLink}>
         <img src="/link.svg" />
-        {showInputLink && <div className={style.hidedInput}>
+        {showInputLink && <div className="editorMD__hidedInput">
           <input value={inputLink} onChange={handleInputLink} />
           <div>
-            <button className={style.button} onClick={confirmLink}>Ok</button>
+            <button className="editorMD__button" onClick={confirmLink}>Ok</button>
           </div>
         </div>}
       </button>
     </div>
-    {showPlaceholder && <strong className={style.placeholder}>{placeholderText}</strong>}
+    {showPlaceholder && <strong className="editorMD__placeholder">{placeholderText}</strong>}
     {data.map((item, index) => {
       return handleTags(item.tag, item.content, index);
     })}
