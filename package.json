@@ -1,0 +1,25 @@
+{
+  "name": "mditor",
+  "version": "1.0.0",
+  "description": "Um simples editor wysiwyg que gera .MD para React",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joaosass/mditor.git"
+  },
+  "keywords": [
+    "react",
+    "editor",
+    "md",
+    "wysiwyg"
+  ],
+  "author": "joaosass",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joaosass/mditor/issues"
+  },
+  "homepage": "https://github.com/joaosass/mditor#readme"
+}
